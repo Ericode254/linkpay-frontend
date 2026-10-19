@@ -11,7 +11,8 @@ npm run dev
 
 The app runs at `http://localhost:3000`.
 
-Make sure the backend is running at `http://127.0.0.1:8000` (or set `NEXT_PUBLIC_API_BASE_URL`).
+Backend: run the Django project in `/home/moenga/linkpay/backend` (port 8000).
+Make sure it is running at `http://127.0.0.1:8000` (or set `NEXT_PUBLIC_API_BASE_URL`).
 
 ## Environment variables
 

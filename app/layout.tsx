@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
-import Nav from "@/components/Nav";
+import Nav from "@/components/navigation/Nav";
 
 export const metadata: Metadata = {
   title: "LinkPay – Connected wallet network",
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-slate-50 text-slate-900">
-        <Nav />
-        <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+      <body className="min-h-screen bg-surface-2 text-charcoal-800">
+        <Suspense fallback={null}>
+          <Nav />
+        </Suspense>
+        <main className="mx-auto max-w-6xl px-4 py-8 pb-24 md:pb-8">{children}</main>
       </body>
     </html>
   );

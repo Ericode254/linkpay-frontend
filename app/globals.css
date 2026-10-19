@@ -1,35 +1,165 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f6f6f4;
-  --foreground: #1a1a1a;
-  --brand: #1f2937;
-  --brand-dark: #111827;
-  --accent: #8a6d1b;
-  --accent-dark: #6f5612;
-  --surface: #ffffff;
-  --border: #e6e6e3;
-  --muted: #595959;
-  --success: #1e7f4f;
-  --warning: #9a6700;
-  --danger: #b42318;
-  --info: #1d4ed8;
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  /* Deep charcoal navy */
+  --charcoal-950: #061424;
+  --charcoal-900: #0b234a;
+  --charcoal-800: #13325f;
+  --charcoal-700: #1e4a8f;
+  --charcoal-600: #334155;
+  --charcoal-500: #64748b;
+
+  /* Warm gold */
+  --gold-950: #451a03;
+  --gold-900: #7c3a0c;
+  --gold-800: #9a3412;
+  --gold-700: #c2410c;
+  --gold-600: #ea580c;
+  --gold-500: #f97316;
+  --gold-400: #fb923c;
+  --gold-300: #fdba74;
+  --gold-100: #ffedd5;
+  --gold-50:  #fff7ed;
+
+  /* Neutrals */
+  --slate-400: #64748b;
+  --slate-300: #94a3b8;
+  --slate-200: #cbd5e1;
+  --slate-100: #e2e8f0;
+  --slate-50:  #f1f5f9;
+
+  /* Surfaces */
+  --surface:   #ffffff;
+  --surface-2: #f8fafc;
+  --surface-3: #f1f5f9;
+  --border:    #e2e8f0;
+  --border-strong: #cbd5e1;
+  --muted:     #475569;
+
+  /* Status */
+  --success:        #059669;
+  --success-soft:   #dcfce7;
+  --warning:        #d97706;
+  --warning-soft:   #fef3c7;
+  --danger:         #dc2626;
+  --danger-soft:    #fee2e2;
+  --info:           #2563eb;
+  --info-soft:      #dbeafe;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-brand: var(--brand);
-  --color-accent: var(--accent);
+  --color-brand: var(--charcoal-800);
+  --color-brand-dark: var(--charcoal-950);
+  --color-accent: var(--gold-600);
+  --color-accent-dark: var(--gold-700);
+  --color-accent-soft: var(--gold-100);
+  --color-accent-wash: var(--gold-50);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
   --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-muted: var(--muted);
+  --color-charcoal-950: var(--charcoal-950);
+  --color-charcoal-900: var(--charcoal-900);
+  --color-charcoal-800: var(--charcoal-800);
+  --color-charcoal-700: var(--charcoal-700);
+  --color-charcoal-600: var(--charcoal-600);
+  --color-charcoal-500: var(--charcoal-500);
+  --color-gold-950: var(--gold-950);
+  --color-gold-900: var(--gold-900);
+  --color-gold-800: var(--gold-800);
+  --color-gold-700: var(--gold-700);
+  --color-gold-600: var(--gold-600);
+  --color-gold-500: var(--gold-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-300: var(--gold-300);
+  --color-gold-100: var(--gold-100);
+  --color-gold-50:  var(--gold-50);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-slate-400: var(--slate-400);
+  --color-slate-300: var(--slate-300);
+  --color-slate-200: var(--slate-200);
+  --color-slate-100: var(--slate-100);
+  --color-slate-50:  var(--slate-50);
 }
 
-html { font-feature-settings: "tnum" 1; }
+html { font-feature-settings: "tnum" 1; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 
 body {
-  background: var(--background);
+  background: linear-gradient(180deg, #ffffff 0%, #f3f7fb 100%);
   color: var(--foreground);
   font-family: Inter, "Roboto", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilities */
+.text-balance { text-wrap: balance; }
+
+/* Glass card */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Subtle page entry animation */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out both;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.65; }
+}
+.animate-pulse-soft {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Range input styling */
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  height: 16px; width: 16px;
+  border-radius: 50%;
+  background: var(--gold-600);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%; height: 4px;
+  cursor: pointer;
+  background: #e2e8f0;
+  border-radius: 2px;
 }

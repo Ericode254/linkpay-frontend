@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LinkPay — Design Package (Moodboard)</title>
+<meta name="description" content="Visual moodboard and UI concepts for the LinkPay premium fintech brand." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* Charcoal core */
+    --charcoal-900: #0f1216;
+    --charcoal-800: #111827;
+    --charcoal-700: #1f2937;
+    --charcoal-600: #374151;
+    --charcoal-500: #4b5563;
+    /* Neutrals */
+    --slate-400: #6b7280;
+    --slate-300: #9ca3af;
+    --slate-200: #d1d5db;
+    --slate-100: #e5e7eb;
+    --slate-50:  #f3f4f6;
+    /* Surfaces */
+    --bg:        #f6f6f4;
+    --surface:   #ffffff;
+    --surface-2: #fafaf7;
+    --border:    #e6e6e3;
+    --border-strong: #d6d6d2;
+    --muted:     #595959;
+    /* Gold accent (restrained) */
+    --gold-900:  #4a3a0a;
+    --gold-700:  #1e3a8a;
+    --gold-600:  #2563eb;
+    --gold-500:  #2563eb;
+    --gold-400:  #60a5fa;
+    --gold-200:  #bfdbfe;
+    --gold-100:  #dbeafe;
+    --gold-50:   #eff6ff;
+    /* Status */
+    --success:  #1e7f4f;
+    --success-soft: #e7f3ec;
+    --warning:  #9a6700;
+    --warning-soft: #fef3c7;
+    --danger:   #b42318;
+    --danger-soft: #fbe9e7;
+    --info:     #2563eb;
+    --info-soft:#e8eefc;
+    /* Elevation */
+    --shadow-sm: 0 1px 2px rgba(17,24,39,.06);
+    --shadow-md: 0 4px 12px rgba(17,24,39,.08);
+    --shadow-lg: 0 12px 32px rgba(17,24,39,.12);
+    --shadow-gold: 0 8px 24px rgba(138,109,27,.18);
+    /* Radii */
+    --r-xs: 6px;
+    --r-sm: 8px;
+    --r-md: 12px;
+    --r-lg: 16px;
+    --r-xl: 20px;
+    --r-2xl: 24px;
+    --r-full: 9999px;
+    /* Motion */
+    --dur-fast: 120ms;
+    --dur-base: 180ms;
+    --dur-slow: 280ms;
+    --ease: cubic-bezier(.2,.8,.2,1);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--charcoal-700);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "tnum" 1, "cv11" 1;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+  section { padding: 64px 0; }
+  @media (max-width: 768px) { section { padding: 40px 0; } .wrap { padding: 0 16px; } }
+
+  /* ---- Top bar ---- */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(246,246,244,.82);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-weight: 800; font-size: 20px; color: var(--gold-600); letter-spacing: -0.02em; text-decoration: none; }
+  .topbar nav { display: flex; gap: 6px; }
+  .topbar a.navlink { color: var(--charcoal-600); text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 12px; border-radius: var(--r-sm); transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease); }
+  .topbar a.navlink:hover { background: var(--surface); color: var(--gold-600); }
+  .topbar .cta { background: var(--charcoal-800); color: #fff; padding: 9px 16px; border-radius: var(--r-sm); font-size: 14px; font-weight: 600; text-decoration: none; transition: background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease); }
+  .topbar .cta:hover { background: var(--charcoal-900); transform: translateY(-1px); }
+
+  /* ---- Section headings ---- */
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-600); }
+  .eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--gold-600); }
+  .h1 { font-size: clamp(36px, 5vw, 62px); line-height: 1.05; letter-spacing: -0.035em; font-weight: 800; color: var(--charcoal-800); margin: 14px 0 12px; }
+  .h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.15; letter-spacing: -0.025em; font-weight: 700; color: var(--charcoal-800); margin: 0 0 10px; }
+  .h3 { font-size: 18px; line-height: 1.3; font-weight: 600; color: var(--charcoal-800); margin: 0 0 6px; }
+  .lead { font-size: 17px; max-width: 62ch; color: var(--muted); }
+  .section-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 32px; max-width: 720px; }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative; overflow: hidden;
+    background: linear-gradient(120deg, var(--charcoal-900) 0%, var(--charcoal-700) 60%, #2a2f3a 100%);
+    color: #fff; padding: 96px 0 88px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 12% 18%, rgba(138,109,27,.34), transparent 46%),
+                radial-gradient(circle at 88% 70%, rgba(201,166,74,.18), transparent 50%);
+    pointer-events: none;
+  }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .hero h1 { color: #fff; font-size: clamp(40px, 5.5vw, 68px); }
+  .hero .lead { color: #cfd3dc; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px 6px 8px; border-radius: var(--r-full);
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+    color: #e9ecef; font-size: 12px; font-weight: 500; backdrop-filter: blur(8px);
+  }
+  .hero .badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold-400); box-shadow: 0 0 0 3px rgba(201,166,74,.25); }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn-gold {
+    background: linear-gradient(180deg, var(--gold-500), var(--gold-600));
+    color: #fff; border: 1px solid var(--gold-600);
+    padding: 13px 22px; border-radius: var(--r-sm); font-weight: 600; font-size: 15px;
+    box-shadow: var(--shadow-gold); transition: transform var(--dur-fast) var(--ease), filter var(--dur-fast) var(--ease);
+  }
+  .btn-gold:hover { transform: translateY(-1px); filter: brightness(1.05); }
+  .btn-outline-light {
+    background: rgba(255,255,255,.06); color: #fff;
+    border: 1px solid rgba(255,255,255,.22); padding: 13px 22px;
+    border-radius: var(--r-sm); font-weight: 600; font-size: 15px;
+    backdrop-filter: blur(8px); transition: background var(--dur-fast) var(--ease);
+  }
+  .btn-outline-light:hover { background: rgba(255,255,255,.12); }
+
+  /* ---- Phone / device mock frame ---- */
+  .device {
+    background: var(--charcoal-900); border-radius: 36px;
+    padding: 14px; box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255,255,255,.06);
+  }
+  .device-screen {
+    background: var(--surface); border-radius: 24px; overflow: hidden;
+    min-height: 420px;
+  }
+
+  /* ---- Swatches ---- */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .swatch { border-radius: var(--r-md); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border); background: var(--surface); }
+  .swatch .color { height: 92px; }
+  .swatch .meta { padding: 10px 12px; }
+  .swatch .name { font-size: 13px; font-weight: 600; color: var(--charcoal-800); }
+  .swatch .hex { font-size: 12px; color: var(--muted); font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+
+  /* ---- Type samples ---- */
+  .type-row { display: grid; grid-template-columns: 110px 1fr; gap: 24px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .type-row .label { font-size: 12px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+  .type-sample { margin: 0; }
+
+  /* ---- Buttons ---- */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; cursor: pointer; border: 1px solid transparent; transition: all var(--dur-base) var(--ease); font-weight: 600; line-height: 1; }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary { background: var(--charcoal-800); color: #fff; padding: 11px 18px; border-radius: var(--r-sm); }
+  .btn-primary:hover { background: var(--charcoal-900); box-shadow: var(--shadow-md); }
+  .btn-accent { background: linear-gradient(180deg, var(--gold-500), var(--gold-600)); color: #fff; padding: 11px 18px; border-radius: var(--r-sm); box-shadow: var(--shadow-gold); }
+  .btn-accent:hover { filter: brightness(1.05); }
+  .btn-secondary { background: var(--surface); color: var(--charcoal-700); border-color: var(--border-strong); padding: 11px 18px; border-radius: var(--r-sm); }
+  .btn-secondary:hover { background: var(--surface-2); border-color: var(--charcoal-600); }
+  .btn-ghost { background: transparent; color: var(--gold-600); padding: 11px 18px; border-radius: var(--r-sm); }
+  .btn-ghost:hover { background: var(--gold-50); }
+  .btn-success { background: var(--success); color: #fff; padding: 11px 18px; border-radius: var(--r-sm); }
+  .btn-danger { background: var(--danger); color: #fff; padding: 11px 18px; border-radius: var(--r-sm); }
+  .btn-sm { padding: 7px 12px; font-size: 13px; border-radius: var(--r-xs); }
+  .btn-lg { padding: 14px 24px; font-size: 16px; border-radius: var(--r-md); }
+
+  /* ---- Cards ---- */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 20px; box-shadow: var(--shadow-sm); transition: box-shadow var(--dur-base) var(--ease), transform var(--dur-base) var(--ease); }
+  .card:hover { box-shadow: var(--shadow-md); }
+  .card-elevated { box-shadow: var(--shadow-md); border-color: transparent; }
+  .card-tinted { background: linear-gradient(180deg, var(--gold-50), #fff); border-color: var(--gold-200); }
+  .card-dark { background: linear-gradient(160deg, var(--charcoal-900), var(--charcoal-700)); color: #fff; border: none; }
+  .card-dark .muted { color: #a9b0bc; }
+  .card .kpi { font-size: 34px; font-weight: 800; letter-spacing: -0.03em; }
+
+  /* ---- Inputs ---- */
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 13px; font-weight: 500; color: var(--charcoal-600); }
+  .input {
+    height: 42px; padding: 0 12px; border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+    background: var(--surface); color: var(--charcoal-800); font-size: 14px; font-family: inherit;
+    transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+  }
+  .input:focus { outline: none; border-color: var(--gold-600); box-shadow: 0 0 0 3px var(--gold-100); }
+  .input::placeholder { color: var(--slate-300); }
+
+  /* ---- Badges ---- */
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: var(--r-full); font-size: 12px; font-weight: 600; border: 1px solid transparent; }
+  .badge-success { background: var(--success-soft); color: var(--success); }
+  .badge-warn { background: var(--warning-soft); color: var(--warning); }
+  .badge-danger { background: var(--danger-soft); color: var(--danger); }
+  .badge-info { background: var(--info-soft); color: var(--info); }
+  .badge-neutral { background: var(--slate-50); color: var(--charcoal-600); border-color: var(--border); }
+  .badge-gold { background: var(--gold-50); color: var(--gold-700); border-color: var(--gold-200); }
+  .badge-dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  /* ---- Avatar ---- */
+  .avatar { display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; background: var(--gold-100); color: var(--gold-700); }
+  .avatar-sm { width: 32px; height: 32px; font-size: 12px; }
+  .avatar-md { width: 40px; height: 40px; font-size: 14px; }
+
+  /* ---- Chips ---- */
+  .chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--r-full); background: var(--surface); border: 1px solid var(--border); font-size: 13px; font-weight: 500; transition: all var(--dur-fast) var(--ease); }
+  .chip:hover { border-color: var(--gold-200); background: var(--gold-50); color: var(--gold-700); }
+  .chip .av { width: 24px; height: 24px; font-size: 10px; }
+
+  /* ---- Tx row ---- */
+  .tx { display: flex; align-items: center; gap: 14px; padding: 12px 4px; border-bottom: 1px solid var(--border); transition: background var(--dur-fast) var(--ease); border-radius: var(--r-sm); }
+  .tx:hover { background: var(--surface-2); }
+  .tx-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .tx-in { background: var(--success-soft); color: var(--success); }
+  .tx-out { background: var(--slate-50); color: var(--charcoal-600); }
+  .tx-amount { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .tx-in .tx-amount { color: var(--success); }
+
+  /* ---- Nav (mobile bottom) ---- */
+  .bottomnav { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--surface); border-top: 1px solid var(--border); padding: 6px 0 max(6px, env(safe-area-inset-bottom)); }
+  .bottomnav a { display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none; color: var(--slate-400); font-size: 10.5px; font-weight: 600; padding: 6px 0; }
+  .bottomnav a.active { color: var(--gold-600); }
+  .bottomnav .ico { width: 20px; height: 20px; border-radius: 6px; background: currentColor; opacity: .18; }
+
+  /* ---- Utility ---- */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .grid2, .grid3 { grid-template-columns: 1fr; } .grid4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .grid4 { grid-template-columns: 1fr; } }
+  .row-between { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .pill-group { display: inline-flex; gap: 4px; padding: 4px; background: var(--slate-50); border: 1px solid var(--border); border-radius: var(--r-sm); }
+  .pill-group button { border: none; background: transparent; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; color: var(--charcoal-600); cursor: pointer; }
+  .pill-group button.active { background: var(--surface); color: var(--charcoal-800); box-shadow: var(--shadow-sm); }
+  .stat-tile { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--r-md); padding: 14px 16px; }
+  .stat-tile .label { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--slate-400); font-weight: 600; }
+  .stat-tile .value { font-size: 22px; font-weight: 700; color: var(--charcoal-800); margin-top: 4px; font-variant-numeric: tabular-nums; }
+
+  /* ---- Footer note ---- */
+  .footnote { text-align: center; font-size: 12px; color: var(--slate-400); padding: 32px 0; border-top: 1px solid var(--border); margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#hero">LinkPay</a>
+    <nav>
+      <a class="navlink" href="#palette">Palette</a>
+      <a class="navlink" href="#type">Type</a>
+      <a class="navlink" href="#components">Components</a>
+      <a class="navlink" href="#screens">Screens</a>
+    </nav>
+    <a class="cta" href="#hero">Design package · v1.0</a>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge"><span class="dot"></span>Premium fintech identity · Everyday users &amp; merchants</span>
+      <h1 class="h1">LinkPay design direction.</h1>
+      <p class="lead">A trustworthy, modern wallet network identity built on deep charcoal, white and restrained gold. Clean typography, generous spacing, and a simple money experience that scales from a first P2P payment to a merchant back-office.</p>
+      <div class="hero-cta">
+        <a class="btn-gold" href="#palette">Explore the system</a>
+        <a class="btn-outline-light" href="#screens">View screens</a>
+      </div>
+    </div>
+    <div>
+      <div class="device">
+        <div class="device-screen">
+          <!-- Mini wallet preview -->
+          <div style="padding:20px; background:var(--surface);">
+            <div class="row-between">
+              <div>
+                <div style="font-size:11px;color:var(--slate-400);text-transform:uppercase;letter-spacing:.1em;font-weight:600;">Available balance</div>
+                <div style="font-size:26px;font-weight:800;color:var(--charcoal-800);letter-spacing:-.03em;margin-top:2px;">KES 12,480.50</div>
+              </div>
+              <span class="badge badge-gold">Verified</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:14px;">
+              <button class="btn btn-accent btn-sm" style="flex:1;">Send</button>
+              <button class="btn btn-secondary btn-sm" style="flex:1;">Receive</button>
+              <button class="btn btn-secondary btn-sm" style="flex:1;">Request</button>
+            </div>
+            <div style="margin-top:16px;">
+              <div style="font-size:11px;color:var(--slate-400);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:8px;">Recent activity</div>
+              <div class="tx"><span class="tx-icon tx-in">↓</span><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;color:var(--charcoal-800);">Payment from Alice</p><p style="margin:0;font-size:11px;color:var(--slate-400);">Today · @alice</p></div><span class="tx-amount" style="color:var(--success);">+2,000.00</span></div>
+              <div class="tx"><span class="tx-icon tx-out">↑</span><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;color:var(--charcoal-800);">Send to Bob</p><p style="margin:0;font-size:11px;color:var(--slate-400);">Yesterday · @bob</p></div><span class="tx-amount">-450.00</span></div>
+              <div class="tx"><span class="tx-icon tx-in">↓</span><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;color:var(--charcoal-800);">Invoice paid</p><p style="margin:0;font-size:11px;color:var(--slate-400);">2d ago · #LP-8821</p></div><span class="tx-amount" style="color:var(--success);">+6,200.00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Palette -->
+<section id="palette">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">01 · Color</span>
+      <h2 class="h2">Deep charcoal, white, restrained gold.</h2>
+      <p class="lead">Charcoal carries authority and trust; white keeps the canvas breathable; gold is used sparingly for emphasis, focus and premium moments. Status colors are muted and desaturated so they never compete with the brand.</p>
+    </div>
+
+    <h3 class="h3" style="margin-bottom:12px;">Brand core</h3>
+    <div class="swatch-grid" style="margin-bottom:32px;">
+      <div class="swatch"><div class="color" style="background:#0f1216;"></div><div class="meta"><div class="name">Charcoal 900</div><div class="hex">#0f1216</div></div></div>
+      <div class="swatch"><div class="color" style="background:#111827;"></div><div class="meta"><div class="name">Charcoal 800</div><div class="hex">#111827</div></div></div>
+      <div class="swatch"><div class="color" style="background:#1f2937;"></div><div class="meta"><div class="name">Charcoal 700</div><div class="hex">#1f2937</div></div></div>
+      <div class="swatch"><div class="color" style="background:#ffffff;border-bottom:1px solid #e6e6e3;"></div><div class="meta"><div class="name">Surface white</div><div class="hex">#ffffff</div></div></div>
+      <div class="swatch"><div class="color" style="background:#f6f6f4;"></div><div class="meta"><div class="name">App canvas</div><div class="hex">#f6f6f4</div></div></div>
+      <div class="swatch"><div class="color" style="background:#1e3a8a;"></div><div class="meta"><div class="name">Gold 700 (text)</div><div class="hex">#1e3a8a</div></div></div>
+      <div class="swatch"><div class="color" style="background:#2563eb;"></div><div class="meta"><div class="name">Gold 600 (accent)</div><div class="hex">#2563eb</div></div></div>
+      <div class="swatch"><div class="color" style="background:#2563eb;"></div><div class="meta"><div class="name">Gold 500</div><div class="hex">#2563eb</div></div></div>
+      <div class="swatch"><div class="color" style="background:#60a5fa;"></div><div class="meta"><div class="name">Gold 400 (highlight)</div><div class="hex">#60a5fa</div></div></div>
+      <div class="swatch"><div class="color" style="background:#bfdbfe;"></div><div class="meta"><div class="name">Gold 200</div><div class="hex">#bfdbfe</div></div></div>
+      <div class="swatch"><div class="color" style="background:#dbeafe;"></div><div class="meta"><div class="name">Gold 100 (soft)</div><div class="hex">#dbeafe</div></div></div>
+      <div class="swatch"><div class="color" style="background:#eff6ff;"></div><div class="meta"><div class="name">Gold 50 (wash)</div><div class="hex">#eff6ff</div></div></div>
+    </div>
+
+    <h3 class="h3" style="margin-bottom:12px;">Status &amp; neutral scale</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="color" style="background:#1e7f4f;"></div><div class="meta"><div class="name">Success</div><div class="hex">#1e7f4f</div></div></div>
+      <div class="swatch"><div class="color" style="background:#e7f3ec;"></div><div class="meta"><div class="name">Success soft</div><div class="hex">#e7f3ec</div></div></div>
+      <div class="swatch"><div class="color" style="background:#9a6700;"></div><div class="meta"><div class="name">Warning</div><div class="hex">#9a6700</div></div></div>
+      <div class="swatch"><div class="color" style="background:#fef3c7;"></div><div class="meta"><div class="name">Warning soft</div><div class="hex">#fef3c7</div></div></div>
+      <div class="swatch"><div class="color" style="background:#b42318;"></div><div class="meta"><div class="name">Danger</div><div class="hex">#b42318</div></div></div>
+      <div class="swatch"><div class="color" style="background:#fbe9e7;"></div><div class="meta"><div class="name">Danger soft</div><div class="hex">#fbe9e7</div></div></div>
+      <div class="swatch"><div class="color" style="background:#2563eb;"></div><div class="meta"><div class="name">Info</div><div class="hex">#2563eb</div></div></div>
+      <div class="swatch"><div class="color" style="background:#e8eefc;"></div><div class="meta"><div class="name">Info soft</div><div class="hex">#e8eefc</div></div></div>
+      <div class="swatch"><div class="color" style="background:#6b7280;"></div><div class="meta"><div class="name">Muted text</div><div class="hex">#6b7280</div></div></div>
+      <div class="swatch"><div class="color" style="background:#9ca3af;"></div><div class="meta"><div class="name">Subtle text</div><div class="hex">#9ca3af</div></div></div>
+      <div class="swatch"><div class="color" style="background:#d1d5db;"></div><div class="meta"><div class="name">Border strong</div><div class="hex">#d1d5db</div></div></div>
+      <div class="swatch"><div class="color" style="background:#e5e7eb;border-bottom:1px solid #d1d5db;"></div><div class="meta"><div class="name">Border</div><div class="hex">#e5e7eb</div></div></div>
+    </div>
+
+    <div style="margin-top:32px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:20px;">
+      <h3 class="h3">Usage rules</h3>
+      <ul style="margin:8px 0 0; padding-left:20px; color:var(--muted); font-size:14px; line-height:1.8;">
+        <li><strong>Gold is accent, not decoration.</strong> Use for primary CTAs on auth, focus rings, links, key figures, verified badges and empty-state illustrations. Never more than one gold primary action per view.</li>
+        <li><strong>Charcoal is the action color in-app.</strong> Send/Pay/Confirm buttons are charcoal 800; gold is reserved for trust moments and highlights.</li>
+        <li><strong>Warm off-white canvas (#f6f6f4)</strong> softens the experience; pure white surfaces sit above it for elevation.</li>
+        <li><strong>Money in, money out.</strong> Incoming = success green with + sign; outgoing = charcoal with − sign. Never color-only; always sign + status text.</li>
+        <li><strong>Minimum contrast:</strong> body text on white ≥ 4.5:1; charcoal 700 on canvas passes AAA.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Typography -->
+<section id="type" style="background:var(--surface);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02 · Typography</span>
+      <h2 class="h2">Inter. Clean, modern, numerical.</h2>
+      <p class="lead">One typeface family for cohesion, with tabular numerals enabled globally so money columns line up. Headings use tight tracking and heavier weights for authority; body copy stays open and readable.</p>
+    </div>
+
+    <div style="background:var(--bg); border:1px solid var(--border); border-radius:var(--r-lg); padding:8px 24px;">
+      <div class="type-row"><span class="label">Display · 800</span><h1 class="type-sample" style="font-size:62px;font-weight:800;letter-spacing:-.035em;color:var(--charcoal-800);line-height:1.02;">One network. Many transactions.</h1></div>
+      <div class="type-row"><span class="label">H1 · 700</span><h1 class="type-sample" style="font-size:38px;font-weight:700;letter-spacing:-.028em;color:var(--charcoal-800);">Available balance</h1></div>
+      <div class="type-row"><span class="label">H2 · 700</span><h2 class="type-sample" style="font-size:28px;font-weight:700;letter-spacing:-.022em;color:var(--charcoal-800);">Merchant dashboard</h2></div>
+      <div class="type-row"><span class="label">H3 · 600</span><h3 class="type-sample" style="font-size:20px;font-weight:600;color:var(--charcoal-800);">Recent transactions</h3></div>
+      <div class="type-row"><span class="label">H4 · 600</span><h4 class="type-sample" style="font-size:16px;font-weight:600;color:var(--charcoal-800);">Account details</h4></div>
+      <div class="type-row"><span class="label">Body · 400</span><p class="type-sample" style="font-size:16px;font-weight:400;color:var(--charcoal-700);max-width:62ch;">LinkPay connects individuals, merchants, freelancers, suppliers and service providers through one shared transaction experience. Send, receive, request and settle with clear references.</p></div>
+      <div class="type-row"><span class="label">Body sm · 400</span><p class="type-sample" style="font-size:14px;font-weight:400;color:var(--muted);">Test environment — balances are simulated. Not real money.</p></div>
+      <div class="type-row"><span class="label">Caption · 500</span><p class="type-sample" style="font-size:12px;font-weight:500;color:var(--slate-400);letter-spacing:.04em;">TODAY · 3 COMPLETED · +KES 4,200.00</p></div>
+      <div class="type-row"><span class="label">Mono · 600</span><p class="type-sample" style="font-size:14px;font-weight:600;font-family:ui-monospace,'SF Mono',Menlo,monospace;color:var(--gold-700);">LP-2026-004821 · @moenga · KES 1,250.00</p></div>
+      <div class="type-row" style="border-bottom:none;"><span class="label">Numbers</span><p class="type-sample" style="font-size:34px;font-weight:800;color:var(--charcoal-800);font-variant-numeric:tabular-nums;">12,480.50 &nbsp; 9,320.00 &nbsp; 3,160.50</p></div>
+    </div>
+
+    <div class="grid2" style="margin-top:24px;">
+      <div class="card"><h3 class="h3">Font stack</h3><p style="font-size:13px;color:var(--muted);margin:4px 0 0;">Display &amp; body: <strong>Inter</strong> (400, 500, 600, 700, 800).<br />Money &amp; refs: <strong>Inter with tnum</strong> (system mono fallback for hashes).<br />Global: <code>font-feature-settings: "tnum" 1;</code></p></div>
+      <div class="card"><h3 class="h3">Spacing scale</h3><p style="font-size:13px;color:var(--muted);margin:4px 0 0;">4 · 8 · 12 · 16 · 20 · 24 · 32 · 40 · 56 · 72 · 96 px. 8 px base grid. Layout max width 1280 px for marketing, 1120 px for app.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Components -->
+<section id="components" style="background:var(--bg);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03 · Components</span>
+      <h2 class="h2">Reusable building blocks.</h2>
+      <p class="lead">Everything is a small set of primitives composed together: surface, radius, shadow, motion. Components are stateless-friendly and keyboard-first.</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="card" style="margin-bottom:20px;">
+      <h3 class="h3" style="margin-bottom:16px;">Buttons</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-accent">Accent (gold)</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-danger">Danger</button>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;">
+        <button class="btn btn-primary btn-sm">Small</button>
+        <button class="btn btn-primary">Default</button>
+        <button class="btn btn-primary btn-lg">Large</button>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin:4px 0 0;">States: hover (lift + shadow), active (press), disabled (opacity .5, no pointer), loading (spinner + "Sending…"). Focus ring = 3px gold 100.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid3" style="margin-bottom:20px;">
+      <div class="card"><h3 class="h3">Surface card</h3><p style="font-size:13px;color:var(--muted);">Default elevated surface on canvas. White, 1px border, subtle shadow.</p></div>
+      <div class="card card-elevated"><h3 class="h3">Elevated card</h3><p style="font-size:13px;color:var(--muted);">Modals, featured panels, onboarding steps.</p></div>
+      <div class="card card-tinted"><h3 class="h3">Tinted card</h3><p style="font-size:13px;color:var(--muted);">Gold wash for verification tips, security notices, premium moments.</p></div>
+    </div>
+    <div class="card card-dark" style="margin-bottom:20px;">
+      <div class="row-between">
+        <div><p style="margin:0;font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:.1em;font-weight:600;">Dark card</p><p style="margin:6px 0 0;font-size:22px;font-weight:700;">For hero asides and summary rails.</p></div>
+        <span class="badge badge-gold">Premium</span>
+      </div>
+    </div>
+
+    <!-- Inputs, badges -->
+    <div class="grid2" style="margin-bottom:20px;">
+      <div class="card">
+        <h3 class="h3" style="margin-bottom:14px;">Form fields</h3>
+        <div class="field" style="margin-bottom:12px;"><label>Email address</label><input class="input" type="email" placeholder="you@example.com" /></div>
+        <div class="field" style="margin-bottom:12px;"><label>Password</label><input class="input" type="password" placeholder="••••••••" /></div>
+        <div class="field"><label>Account type</label>
+          <select class="input"><option>Individual / Customer</option><option>Merchant / Small business</option><option>Freelancer</option></select>
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="h3" style="margin-bottom:14px;">Status badges</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <span class="badge badge-success badge-dot">Completed</span>
+          <span class="badge badge-warn badge-dot">Pending</span>
+          <span class="badge badge-danger badge-dot">Failed</span>
+          <span class="badge badge-neutral">Cancelled</span>
+          <span class="badge badge-info">Refunded</span>
+          <span class="badge badge-gold">Verified</span>
+          <span class="badge badge-gold">Testnet</span>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin:8px 0 0;">Status is always text + color + optional dot. Never color alone.</p>
+        <h3 class="h3" style="margin:18px 0 10px;">Chips (frequent recipients)</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <span class="chip"><span class="avatar avatar-sm av">A</span>Alice <span style="color:var(--slate-400);">@alice</span></span>
+          <span class="chip"><span class="avatar avatar-sm av">B</span>Bob <span style="color:var(--slate-400);">@bob</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Account numbers & tx rows -->
+    <div class="card">
+      <div class="row-between" style="margin-bottom:12px;">
+        <h3 class="h3">Transaction rows</h3>
+        <div class="pill-group"><button class="active">All</button><button>Received</button><button>Sent</button></div>
+      </div>
+      <div class="tx"><span class="tx-icon tx-in">↓</span><div style="flex:1;"><p style="margin:0;font-size:14px;font-weight:600;color:var(--charcoal-800);">Payment from Alice Chen</p><p style="margin:0;font-size:12px;color:var(--slate-400);">Today · @alice · #LP-8821</p></div><div style="text-align:right;"><div class="tx-amount" style="color:var(--success);font-size:14px;">+2,000.00 KES</div><span class="badge badge-success" style="font-size:10px;margin-top:4px;">Completed</span></div></div>
+      <div class="tx"><span class="tx-icon tx-out">↑</span><div style="flex:1;"><p style="margin:0;font-size:14px;font-weight:600;color:var(--charcoal-800);">Send to Bob Otieno</p><p style="margin:0;font-size:12px;color:var(--slate-400);">Yesterday · @bob · #LP-8819</p></div><div style="text-align:right;"><div class="tx-amount" style="font-size:14px;">-450.00 KES</div><span class="badge badge-warn" style="font-size:10px;margin-top:4px;">Pending</span></div></div>
+      <div class="tx"><span class="tx-icon tx-in">↓</span><div style="flex:1;"><p style="margin:0;font-size:14px;font-weight:600;color:var(--charcoal-800);">Invoice paid · Freelance</p><p style="margin:0;font-size:12px;color:var(--slate-400);">2d ago · @maria · #LP-8814</p></div><div style="text-align:right;"><div class="tx-amount" style="color:var(--success);font-size:14px;">+6,200.00 KES</div><span class="badge badge-success" style="font-size:10px;margin-top:4px;">Completed</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Screens / mockups -->
+<section id="screens" style="background:var(--surface);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">04 · Screens</span>
+      <h2 class="h2">Landing, wallet and merchant.</h2>
+      <p class="lead">Three composed screens that show the identity in use: the public landing hero, the wallet dashboard, and the merchant overview. Mobile variants follow the same primitives with a 5-item bottom nav.</p>
+    </div>
+
+    <!-- Landing mini -->
+    <div class="card card-elevated" style="margin-bottom:24px; padding:0; overflow:hidden;">
+      <div style="background:linear-gradient(120deg,var(--charcoal-900) 0%,var(--charcoal-700) 60%,#2a2f3a 100%); color:#fff; padding:40px 36px; position:relative; overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(138,109,27,.34),transparent 46%);pointer-events:none;"></div>
+        <div style="position:relative;max-width:60%;">
+          <span class="badge" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#e9ecef;">Testnet demo · Simulated balances</span>
+          <h2 style="font-size:clamp(26px,3vw,40px);font-weight:800;letter-spacing:-.03em;margin:14px 0 8px;color:#fff;">LinkPay: One network. Many transactions.</h2>
+          <p style="color:#cfd3dc;font-size:15px;max-width:46ch;">An interoperable wallet network connecting individuals, merchants, freelancers, suppliers and service providers.</p>
+          <div style="display:flex;gap:10px;margin-top:18px;">
+            <a class="btn-gold" style="text-decoration:none;" href="#">Get started free</a>
+            <a class="btn-outline-light" style="text-decoration:none;" href="#">Log in</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding:32px 36px;">
+        <div class="grid4">
+          <div class="card"><h3 class="h3">Individuals</h3><p style="font-size:13px;color:var(--muted);">Pay, receive, save recipients, view history.</p></div>
+          <div class="card"><h3 class="h3">Merchants</h3><p style="font-size:13px;color:var(--muted);">Accept payments, invoices, sales review.</p></div>
+          <div class="card"><h3 class="h3">Freelancers</h3><p style="font-size:13px;color:var(--muted);">Request payment, invoices, payouts.</p></div>
+          <div class="card"><h3 class="h3">Suppliers</h3><p style="font-size:13px;color:var(--muted);">Receive, settle, customer records.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wallet dashboard mock -->
+    <div class="card card-elevated" style="margin-bottom:24px; padding:0; overflow:hidden;">
+      <div style="padding:36px;">
+        <div class="row-between" style="margin-bottom:20px;">
+          <div><p style="color:var(--slate-400);font-size:13px;margin:0;">Good to see you</p><h3 style="font-size:24px;font-weight:800;color:var(--charcoal-800);margin:2px 0 0;letter-spacing:-.02em;">David Moenga</h3><p style="color:var(--slate-400);font-size:12px;margin:2px 0 0;">Merchant · LP-4821</p></div>
+          <div style="display:flex;gap:8px;"><a class="btn btn-primary btn-sm" style="text-decoration:none;" href="#">Send money</a><a class="btn btn-secondary btn-sm" style="text-decoration:none;" href="#">Receive</a></div>
+        </div>
+        <div class="grid2" style="margin-bottom:16px;">
+          <div class="card" style="background:#fff;">
+            <p style="color:var(--slate-400);font-size:12px;margin:0;text-transform:uppercase;letter-spacing:.1em;font-weight:600;">Available balance</p>
+            <div class="kpi" style="font-variant-numeric:tabular-nums;">KES 12,480.50</div>
+            <p style="color:var(--slate-300);font-size:11px;margin:4px 0 14px;">Test balance. Not real money.</p>
+            <div class="grid3">
+              <div class="stat-tile"><div class="label">Received</div><div class="value" style="color:var(--success);">+9,320</div></div>
+              <div class="stat-tile"><div class="label">Sent</div><div class="value">-3,160</div></div>
+              <div class="stat-tile"><div class="label">Txns</div><div class="value">42</div></div>
+            </div>
+          </div>
+          <div class="card">
+            <h4 style="font-size:13px;font-weight:600;color:var(--charcoal-800);margin:0 0 12px;text-transform:uppercase;letter-spacing:.08em;">Account</h4>
+            <dl style="margin:0;font-size:13px;">
+              <div class="row-between" style="padding:6px 0;border-bottom:1px solid var(--border);"><dt style="color:var(--slate-400);">Status</dt><dd style="margin:0;font-weight:600;"><span class="badge badge-success">Verified</span></dd></div>
+              <div class="row-between" style="padding:6px 0;border-bottom:1px solid var(--border);"><dt style="color:var(--slate-400);">Currency</dt><dd style="margin:0;font-weight:600;">KES</dd></div>
+              <div class="row-between" style="padding:6px 0;border-bottom:1px solid var(--border);"><dt style="color:var(--slate-400);">Public ID</dt><dd style="margin:0;font-family:ui-monospace,monospace;font-size:12px;">LP-4821</dd></div>
+              <div class="row-between" style="padding:6px 0;"><dt style="color:var(--slate-400);">Joined</dt><dd style="margin:0;font-weight:600;">Oct 2026</dd></div>
+            </dl>
+            <div style="margin-top:12px;background:var(--warning-soft);color:var(--warning);padding:8px 10px;border-radius:var(--r-sm);font-size:12px;font-weight:600;">2 pending payment requests</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <span style="font-size:11px;color:var(--slate-400);text-transform:uppercase;letter-spacing:.1em;font-weight:600;align-self:center;">Frequent recipients</span>
+          <span class="chip"><span class="avatar avatar-sm av" style="width:24px;height:24px;font-size:10px;">A</span>Alice <span style="color:var(--slate-400);font-size:12px;">@alice</span></span>
+          <span class="chip"><span class="avatar avatar-sm av" style="width:24px;height:24px;font-size:10px;">B</span>Bob <span style="color:var(--slate-400);font-size:12px;">@bob</span></span>
+          <span class="chip"><span class="avatar avatar-sm av" style="width:24px;height:24px;font-size:10px;">M</span>Maria <span style="color:var(--slate-400);font-size:12px;">@maria</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Merchant overview mock -->
+    <div class="card card-elevated" style="padding:0; overflow:hidden;">
+      <div style="padding:36px;">
+        <div class="row-between" style="margin-bottom:20px;">
+          <div><h3 style="font-size:22px;font-weight:800;color:var(--charcoal-800);margin:0;letter-spacing:-.02em;">Merchant dashboard</h3><p style="color:var(--slate-400);font-size:13px;margin:4px 0 0;">Today's sales, requests and customers.</p></div>
+          <a class="btn btn-primary btn-sm" style="text-decoration:none;" href="#">New request</a>
+        </div>
+        <div class="grid4" style="margin-bottom:18px;">
+          <div class="stat-tile"><div class="label">Total sales</div><div class="value">KES 48,920</div></div>
+          <div class="stat-tile"><div class="label">Completed</div><div class="value">64</div></div>
+          <div class="stat-tile"><div class="label">Pending reqs</div><div class="value">2</div></div>
+          <div class="stat-tile"><div class="label">Paid reqs</div><div class="value">18</div></div>
+        </div>
+        <div class="grid2">
+          <div class="card" style="padding:16px;">
+            <h4 style="font-size:13px;font-weight:600;margin:0 0 10px;">Payment requests</h4>
+            <div class="tx" style="border-bottom:1px solid var(--border);"><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;">#LP-9901 · KES 1,500</p><p style="margin:0;font-size:11px;color:var(--slate-400);">Build repair · pending</p></div><span class="badge badge-warn">Pending</span></div>
+            <div class="tx" style="border-bottom:1px solid var(--border);"><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;">#LP-9897 · KES 3,200</p><p style="margin:0;font-size:11px;color:var(--slate-400);">Invoice #42 · paid</p></div><span class="badge badge-success">Paid</span></div>
+            <div class="tx" style="border-bottom:none;"><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;">#LP-9890 · KES 800</p><p style="margin:0;font-size:11px;color:var(--slate-400);">Walk-in · paid</p></div><span class="badge badge-success">Paid</span></div>
+          </div>
+          <div class="card" style="padding:16px;">
+            <h4 style="font-size:13px;font-weight:600;margin:0 0 10px;">Recent sales</h4>
+            <div class="tx" style="border-bottom:1px solid var(--border);"><span class="tx-icon tx-in" style="width:28px;height:28px;font-size:12px;">↓</span><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;">Alice Chen</p><p style="margin:0;font-size:11px;color:var(--slate-400);">@alice · Today</p></div><span class="tx-amount" style="color:var(--success);font-size:13px;">+2,000.00</span></div>
+            <div class="tx" style="border-bottom:1px solid var(--border);"><span class="tx-icon tx-in" style="width:28px;height:28px;font-size:12px;">↓</span><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;">Bob Otieno</p><p style="margin:0;font-size:11px;color:var(--slate-400);">@bob · Yesterday</p></div><span class="tx-amount" style="color:var(--success);font-size:13px;">+1,500.00</span></div>
+            <div class="tx" style="border-bottom:none;"><span class="tx-icon tx-in" style="width:28px;height:28px;font-size:12px;">↓</span><div style="flex:1;"><p style="margin:0;font-size:13px;font-weight:600;">Maria Njeri</p><p style="margin:0;font-size:11px;color:var(--slate-400);">@maria · 2d ago</p></div><span class="tx-amount" style="color:var(--success);font-size:13px;">+6,200.00</span></div>
+          </div>
+        </div>
+        <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;">
+          <span style="font-size:11px;color:var(--slate-400);text-transform:uppercase;letter-spacing:.1em;font-weight:600;align-self:center;">Customers</span>
+          <span class="chip" style="padding:6px 10px;font-size:12px;">@alice</span>
+          <span class="chip" style="padding:6px 10px;font-size:12px;">@bob</span>
+          <span class="chip" style="padding:6px 10px;font-size:12px;">@maria</span>
+          <span class="chip" style="padding:6px 10px;font-size:12px;">@john</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile bottom nav -->
+    <div style="margin-top:24px;">
+      <h3 class="h3" style="margin-bottom:12px;">Mobile navigation</h3>
+      <div class="device" style="max-width:360px;margin:0 auto;">
+        <div class="device-screen" style="min-height:auto;">
+          <div style="padding:14px 18px 4px;">
+            <p style="font-size:11px;color:var(--slate-400);margin:0;">Good to see you</p>
+            <p style="font-size:18px;font-weight:800;color:var(--charcoal-800);margin:2px 0 0;">David</p>
+          </div>
+          <div class="bottomnav">
+            <a class="active" href="#"><span class="ico"></span>Home</a>
+            <a href="#"><span class="ico"></span>Send</a>
+            <a href="#"><span class="ico"></span>Receive</a>
+            <a href="#"><span class="ico"></span>Merchant</a>
+            <a href="#"><span class="ico"></span>History</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Accessibility / principles -->
+<section style="background:var(--bg);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">05 · Principles</span>
+      <h2 class="h2">Trust is the product.</h2>
+      <p class="lead">A wallet is judged by how safe it feels. These are non-negotiable for every screen shipped under this system.</p>
+    </div>
+    <div class="grid3">
+      <div class="card"><h3 class="h3">Clarity over cleverness</h3><p style="font-size:13px;color:var(--muted);">Plain language, one primary action, visible status. Never hide fees or state.</p></div>
+      <div class="card"><h3 class="h3">Identity first</h3><p style="font-size:13px;color:var(--muted);">Show name + username + photo/initial before money moves. Confirm screen for every payment.</p></div>
+      <div class="card"><h3 class="h3">Immutable references</h3><p style="font-size:13px;color:var(--muted);">Every transaction has a copyable reference. Audit trail, report flow, no silent rewrites.</p></div>
+      <div class="card"><h3 class="h3">Accessible by default</h3><p style="font-size:13px;color:var(--muted);">WCAG AA contrast, keyboard nav, focus rings, status as text + color, reduced-motion respect.</p></div>
+      <div class="card"><h3 class="h3">Honest simulation</h3><p style="font-size:13px;color:var(--muted);">Testnet/test labels always visible. Never pass simulated money as real.</p></div>
+      <div class="card"><h3 class="h3">Spatial generosity</h3><p style="font-size:13px;color:var(--muted);">Avoid dense grids for money. Let balances and lists breathe.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="footnote">LinkPay Design Package · Moodboard v1.0 · Charcoal · White · Restrained gold · Inter · 8px grid</div>
+</body>
+</html>
